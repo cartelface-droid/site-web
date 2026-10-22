@@ -301,9 +301,6 @@ nav {
   font-size: 0.9rem;
 }
 
-#actualites > p:last-child {
-  margin-top: 0.75rem;
-}
 
 .equipements {
   display: grid;
