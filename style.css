@@ -259,3 +259,13 @@ nav {
 #actualites > p:last-child {
   margin-top: 0.75rem;
 }
+
+.equipements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.equipements section {
+  margin-bottom: 0;
+}
