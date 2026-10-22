@@ -381,3 +381,52 @@ nav {
 .sous-menu a:hover {
   text-decoration: underline;
 }
+
+.hero {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.hero h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+
+.hero p + p {
+  margin-top: 1.25rem;
+}
+
+.bouton {
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.bouton:hover {
+  background: var(--accent-hover);
+  color: #fff;
+}
+
+.bouton-secondaire {
+  background: transparent;
+  color: var(--accent);
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.bouton-secondaire:hover {
+  background: var(--accent);
+}
+
+.titre-bloc {
+  margin-bottom: 1rem;
+}
+
+.services section h3 {
+  margin-bottom: 0.5rem;
+}
