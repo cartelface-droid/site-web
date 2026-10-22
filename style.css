@@ -1,3 +1,24 @@
+/*
+  Règle 60-30-10
+  - 60 % dominante : fonds clairs et neutres (page + cartes)
+  - 30 % secondaire : bleu nuit pour en-tête, pied de page, avatars, blocs vidéo
+  - 10 % accent : orange, réservé aux éléments interactifs (liens, boutons)
+*/
+:root {
+  --dominant: #f4f6f8;
+  --surface: #ffffff;
+  --line: #e2e6ea;
+  --text: #1c2430;
+  --muted: #5f6b7a;
+
+  --secondary: #1f2a3c;
+  --on-secondary: #f4f6f8;
+
+  --accent: #c2410c;
+  --accent-hover: #9a3412;
+  --accent-on-dark: #fb923c;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,13 +28,26 @@
 body {
   font-family: system-ui, sans-serif;
   line-height: 1.6;
-  color: #222;
-  background: #f5f5f5;
+  color: var(--text);
+  background: var(--dominant);
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 header {
-  background: #1f2937;
-  color: #fff;
+  background: var(--secondary);
+  color: var(--on-secondary);
   padding: 1.5rem 1rem;
   text-align: center;
 }
@@ -23,9 +57,17 @@ nav {
 }
 
 nav a {
-  color: #93c5fd;
+  color: var(--accent-on-dark);
   text-decoration: none;
   margin: 0 0.75rem;
+}
+
+nav a:hover {
+  color: var(--accent-on-dark);
+}
+
+header :focus-visible {
+  outline-color: var(--accent-on-dark);
 }
 
 nav a:hover {
@@ -39,7 +81,7 @@ main {
 }
 
 section {
-  background: #fff;
+  background: var(--surface);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   border-radius: 8px;
@@ -53,7 +95,8 @@ section h2 {
 footer {
   text-align: center;
   padding: 1rem;
-  color: #666;
+  background: var(--secondary);
+  color: var(--on-secondary);
 }
 
 form {
@@ -66,7 +109,7 @@ form {
 input,
 textarea {
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #b8c0ca;
   border-radius: 4px;
   font: inherit;
 }
@@ -76,18 +119,18 @@ button {
   padding: 0.5rem 1.25rem;
   border: none;
   border-radius: 4px;
-  background: #1f2937;
+  background: var(--accent);
   color: #fff;
   font: inherit;
   cursor: pointer;
 }
 
 button:hover {
-  background: #374151;
+  background: var(--accent-hover);
 }
 
 article {
-  background: #fff;
+  background: var(--surface);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   border-radius: 8px;
@@ -97,12 +140,12 @@ article {
 article time {
   display: block;
   margin-bottom: 0.5rem;
-  color: #666;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
 details {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid var(--line);
   padding: 0.75rem 0;
 }
 
@@ -116,7 +159,7 @@ details p {
 }
 
 blockquote {
-  border-left: 4px solid #93c5fd;
+  border-left: 4px solid var(--secondary);
   padding-left: 1rem;
   font-style: italic;
 }
@@ -124,7 +167,7 @@ blockquote {
 blockquote cite {
   display: block;
   margin-top: 0.5rem;
-  color: #666;
+  color: var(--muted);
   font-size: 0.9rem;
   font-style: normal;
 }
@@ -148,13 +191,13 @@ blockquote cite {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e5e7eb;
-  color: #6b7280;
+  background: var(--line);
+  color: var(--muted);
 }
 
 figcaption {
   margin-top: 0.25rem;
-  color: #666;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
@@ -188,7 +231,7 @@ nav {
 
 .tarifs li {
   padding: 0.35rem 0;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid var(--line);
 }
 
 .equipe {
@@ -210,14 +253,14 @@ nav {
   height: 80px;
   margin: 0 auto 0.75rem;
   border-radius: 50%;
-  background: #1f2937;
-  color: #fff;
+  background: var(--secondary);
+  color: var(--on-secondary);
   font-size: 1.5rem;
   font-weight: 600;
 }
 
 .role {
-  color: #666;
+  color: var(--muted);
   margin-bottom: 0.5rem;
 }
 
@@ -233,26 +276,27 @@ nav {
   align-items: center;
   justify-content: center;
   height: 80px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--line);
   border-radius: 6px;
-  background: #fafafa;
-  color: #374151;
+  background: var(--dominant);
+  color: var(--secondary);
   text-decoration: none;
   font-weight: 600;
 }
 
 .logo:hover {
-  background: #eef2ff;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .actu {
   padding: 0.75rem 0;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid var(--line);
 }
 
 .actu time {
   display: block;
-  color: #666;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
@@ -301,6 +345,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1f2937;
-  color: #9ca3af;
+  background: var(--secondary);
+  color: var(--on-secondary);
 }
