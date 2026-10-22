@@ -107,6 +107,7 @@ form {
 }
 
 input,
+select,
 textarea {
   padding: 0.5rem;
   border: 1px solid #b8c0ca;

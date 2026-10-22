@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support - Mon site web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mon site web</h1>
+    <nav>
+      <a href="index.html#accueil">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="equipe.html">Équipe</a>
+      <a href="projets.html">Projets</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="videos.html">Vidéos</a>
+      <a href="equipements.html">Équipements</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="support.html">Support</a>
+      <a href="temoignages.html">Témoignages</a>
+      <a href="livre-dor.html">Livre d'or</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Support</h2>
+      <p>Un problème ou une question ? Consultez d'abord la <a href="faq.html">FAQ</a>, puis écrivez-nous ci-dessous. Indiquez ici vos horaires et votre délai de réponse habituel.</p>
+    </section>
+
+    <section>
+      <h2>Demande d'assistance</h2>
+      <form action="mailto:cartelface@gmail.com" method="post" enctype="text/plain">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="sujet">Sujet</label>
+        <select id="sujet" name="sujet">
+          <option>Question générale</option>
+          <option>Problème technique</option>
+          <option>Facturation</option>
+          <option>Autre</option>
+        </select>
+
+        <label for="message">Décrivez votre demande</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Envoyer la demande</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mon site web</p>
+  </footer>
+</body>
+</html>
