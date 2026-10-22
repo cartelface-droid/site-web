@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Mon site web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mon site web</h1>
+    <nav>
+      <a href="index.html#accueil">Accueil</a>
+      <a href="index.html#apropos">À propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Contact</h2>
+      <p>Une question ? Écrivez-moi à <a href="mailto:cartelface@gmail.com">cartelface@gmail.com</a> ou utilisez le formulaire.</p>
+
+      <form action="mailto:cartelface@gmail.com" method="post" enctype="text/plain">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mon site web</p>
+  </footer>
+</body>
+</html>
