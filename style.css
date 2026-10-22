@@ -100,3 +100,17 @@ article time {
   color: #666;
   font-size: 0.9rem;
 }
+
+details {
+  border-top: 1px solid #e5e5e5;
+  padding: 0.75rem 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+details p {
+  margin-top: 0.5rem;
+}
