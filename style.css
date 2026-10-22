@@ -114,3 +114,17 @@ summary {
 details p {
   margin-top: 0.5rem;
 }
+
+blockquote {
+  border-left: 4px solid #93c5fd;
+  padding-left: 1rem;
+  font-style: italic;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+  font-style: normal;
+}
