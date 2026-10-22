@@ -128,3 +128,39 @@ blockquote cite {
   font-size: 0.9rem;
   font-style: normal;
 }
+
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.galerie img,
+.photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5e7eb;
+  color: #6b7280;
+}
+
+figcaption {
+  margin-top: 0.25rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 0;
+}
