@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boletín - Mi sitio web</title>
+  <link rel="icon" href="/site-web/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/site-web/style.css">
+</head>
+<body>
+  <header>
+    <h1>Mi sitio web</h1>
+    <div class="langues" aria-label="Langue / Language / Idioma">
+      <a href="/site-web/newsletter.html" hreflang="fr">FR</a>
+      <a href="/site-web/en/newsletter.html" hreflang="en">EN</a>
+      <a href="/site-web/es/newsletter.html" hreflang="es" aria-current="page" class="actif">ES</a>
+    </div>
+    <nav>
+      <a href="index.html#accueil">Inicio</a>
+      <a href="apropos.html">Acerca de</a>
+      <a href="equipe.html">Equipo</a>
+      <a href="projets.html">Proyectos</a>
+      <a href="services.html">Servicios</a>
+      <a href="blog.html">Blog</a>
+      <div class="deroulant">
+        <a href="galerie.html">Galería</a>
+        <div class="sous-menu">
+          <a href="photos.html">Fotos</a>
+          <a href="videos.html">Vídeos</a>
+        </div>
+      </div>
+      <a href="equipements.html">Fotos</a>
+      <a href="tarifs.html">Vídeos</a>
+      <a href="faq.html">Equipos</a>
+      <a href="support.html">Precios</a>
+      <a href="temoignages.html">Preguntas frecuentes</a>
+      <a href="livre-dor.html">Soporte</a>
+      <a href="newsletter.html">Testimonios</a>
+      <a href="partenaires.html">Libro de visitas</a>
+      <a href="contact.html">Boletín</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Boletín</h2>
+      <p>Reciba las novedades del sitio directamente en su correo. Describa aquí la frecuencia de envío y el tipo de contenido.</p>
+
+      <form action="mailto:cartelface@gmail.com" method="post" enctype="text/plain">
+        <label for="email">Su correo electrónico</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Suscribirme</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mi sitio web</p>
+  </footer>
+  <script src="/site-web/script.js" defer></script>
+</body>
+</html>

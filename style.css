@@ -623,3 +623,33 @@ nav {
   height: 1.3rem;
   fill: currentColor;
 }
+
+/* Sélecteur de langue (dans le header, en haut à gauche) */
+.langues {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.langues a {
+  color: var(--on-secondary);
+  text-decoration: none;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  opacity: 0.65;
+  transition: opacity 0.15s ease, background 0.15s ease;
+}
+
+.langues a:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.langues a.actif {
+  opacity: 1;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.18);
+}

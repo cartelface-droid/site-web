@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - My website</title>
+  <link rel="icon" href="/site-web/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/site-web/style.css">
+</head>
+<body>
+  <header>
+    <h1>My website</h1>
+    <div class="langues" aria-label="Langue / Language / Idioma">
+      <a href="/site-web/contact.html" hreflang="fr">FR</a>
+      <a href="/site-web/en/contact.html" hreflang="en" aria-current="page" class="actif">EN</a>
+      <a href="/site-web/es/contact.html" hreflang="es">ES</a>
+    </div>
+    <nav>
+      <a href="index.html#accueil">Home</a>
+      <a href="apropos.html">About</a>
+      <a href="equipe.html">Team</a>
+      <a href="projets.html">Projects</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <div class="deroulant">
+        <a href="galerie.html">Gallery</a>
+        <div class="sous-menu">
+          <a href="photos.html">Photos</a>
+          <a href="videos.html">Videos</a>
+        </div>
+      </div>
+      <a href="equipements.html">Photos</a>
+      <a href="tarifs.html">Videos</a>
+      <a href="faq.html">Equipment</a>
+      <a href="support.html">Pricing</a>
+      <a href="temoignages.html">FAQ</a>
+      <a href="livre-dor.html">Support</a>
+      <a href="newsletter.html">Testimonials</a>
+      <a href="partenaires.html">Guestbook</a>
+      <a href="contact.html">Newsletter</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Contact</h2>
+      <p>A question? Write to me at <a href="mailto:cartelface@gmail.com">cartelface@gmail.com</a> or use the form.</p>
+
+      <form action="mailto:cartelface@gmail.com" method="post" enctype="text/plain">
+        <label for="nom">Name</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 My website</p>
+  </footer>
+  <script src="/site-web/script.js" defer></script>
+</body>
+</html>

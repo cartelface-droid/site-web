@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi sitio web</title>
+  <link rel="icon" href="/site-web/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/site-web/style.css">
+</head>
+<body>
+  <header>
+    <h1>Mi sitio web</h1>
+    <div class="langues" aria-label="Langue / Language / Idioma">
+      <a href="/site-web/index.html" hreflang="fr">FR</a>
+      <a href="/site-web/en/index.html" hreflang="en">EN</a>
+      <a href="/site-web/es/index.html" hreflang="es" aria-current="page" class="actif">ES</a>
+    </div>
+    <nav>
+      <a href="index.html#accueil">Inicio</a>
+      <a href="apropos.html">Acerca de</a>
+      <a href="equipe.html">Equipo</a>
+      <a href="projets.html">Proyectos</a>
+      <a href="services.html">Servicios</a>
+      <a href="blog.html">Blog</a>
+      <div class="deroulant">
+        <a href="galerie.html">Galería</a>
+        <div class="sous-menu">
+          <a href="photos.html">Fotos</a>
+          <a href="videos.html">Vídeos</a>
+        </div>
+      </div>
+      <a href="equipements.html">Fotos</a>
+      <a href="tarifs.html">Vídeos</a>
+      <a href="faq.html">Equipos</a>
+      <a href="support.html">Precios</a>
+      <a href="temoignages.html">Preguntas frecuentes</a>
+      <a href="livre-dor.html">Soporte</a>
+      <a href="newsletter.html">Testimonios</a>
+      <a href="partenaires.html">Libro de visitas</a>
+      <a href="contact.html">Boletín</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="accueil" class="hero">
+      <h2>Su socio industrial multiservicios</h2>
+      <p>Piezas de repuesto, mantenimiento, reparación, montaje, construcción, hidráulica y neumática: una sola empresa para mantener sus instalaciones en marcha.</p>
+      <p>
+        <a class="bouton" href="contact.html">Solicitar un presupuesto</a>
+        <a class="bouton bouton-secondaire" href="services.html">Ver todos nuestros servicios</a>
+      </p>
+    </section>
+
+    <h2 class="titre-bloc">Nuestros servicios</h2>
+    <div class="services">
+      <section>
+        <h3>Entrega de piezas de repuesto</h3>
+        <p>Suministro y entrega de las piezas que necesitan sus máquinas.</p>
+      </section>
+
+      <section>
+        <h3>Mantenimiento industrial</h3>
+        <p>Mantenimiento de máquinas industriales y bombas para reducir las paradas de producción.</p>
+      </section>
+
+      <section>
+        <h3>Reparación de piezas</h3>
+        <p>Restauración de piezas desgastadas o dañadas.</p>
+      </section>
+
+      <section>
+        <h3>Montaje de equipos</h3>
+        <p>Instalación y montaje de equipos industriales.</p>
+      </section>
+
+      <section>
+        <h3>Construcción</h3>
+        <p>Trabajos de construcción para sus instalaciones.</p>
+      </section>
+
+      <section>
+        <h3>Sistemas hidráulicos</h3>
+        <p>Diseño, instalación y reparación de circuitos hidráulicos.</p>
+      </section>
+
+      <section>
+        <h3>Sistemas neumáticos</h3>
+        <p>Diseño, instalación y reparación de circuitos neumáticos.</p>
+      </section>
+
+      <section>
+        <h3>Servicios de agua</h3>
+        <p>Servicios relacionados con el agua (a precisar: tratamiento, distribución, bombeo...).</p>
+      </section>
+    </div>
+
+    <section id="actualites">
+      <h2>Últimas noticias</h2>
+
+      <div class="actu">
+        <h3>Título de la primera noticia</h3>
+        <time datetime="2026-10-22">22 de octubre de 2026</time>
+        <p>Anuncie aquí una novedad, un evento o una actualización.</p>
+      </div>
+
+      <div class="actu">
+        <h3>Título de la segunda noticia</h3>
+        <time datetime="2026-10-10">10 de octubre de 2026</time>
+        <p>Anuncie aquí otra novedad.</p>
+      </div>
+
+      <div class="actu">
+        <h3>Título de la tercera noticia</h3>
+        <time datetime="2026-09-28">28 de septiembre de 2026</time>
+        <p>Anuncie aquí una última novedad.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>¿Un proyecto, una avería, necesita piezas?</h2>
+      <p>Escríbanos a <a href="mailto:cartelface@gmail.com">cartelface@gmail.com</a> o rellene el formulario a continuación.</p>
+
+      <form action="mailto:cartelface@gmail.com" method="post" enctype="text/plain">
+        <label for="nom">Nombre</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <p>¿Prefiere la página dedicada? <a href="contact.html">Ir a la página de contacto</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mi sitio web</p>
+  </footer>
+  <script src="/site-web/script.js" defer></script>
+</body>
+</html>
