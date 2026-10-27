@@ -367,7 +367,8 @@ nav {
 }
 
 .deroulant:hover .sous-menu,
-.deroulant:focus-within .sous-menu {
+.deroulant:focus-within .sous-menu,
+.deroulant.ouvert .sous-menu {
   display: block;
 }
 
