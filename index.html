@@ -113,8 +113,22 @@
 
     <section id="contact">
       <h2>Un projet, une panne, un besoin de pièces ?</h2>
-      <p>Écrivez-nous à <a href="mailto:cartelface@gmail.com">cartelface@gmail.com</a> ou utilisez le formulaire de la page contact.</p>
-      <p><a class="bouton" href="contact.html">Nous contacter</a></p>
+      <p>Écrivez-nous à <a href="mailto:cartelface@gmail.com">cartelface@gmail.com</a> ou remplissez le formulaire ci-dessous.</p>
+
+      <form action="mailto:cartelface@gmail.com" method="post" enctype="text/plain">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+
+      <p>Vous préférez la page dédiée ? <a href="contact.html">Accéder à la page contact</a></p>
     </section>
   </main>
 
