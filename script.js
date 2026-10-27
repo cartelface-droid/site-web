@@ -1,6 +1,68 @@
-// Menus déroulants : survol sur desktop, clic/tap sur mobile (écrans tactiles).
+// Menus déroulants, bouton retour en haut, et mode sombre.
 (function () {
   "use strict";
+
+  // ===== Mode sombre =====
+  var racine = document.documentElement;
+
+  var ICONE_LUNE =
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>';
+  var ICONE_SOLEIL =
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5h0v3m0 14v3M4.2 4.2l2.1 2.1m11.4 11.4l2.1 2.1M2 12h3m14 0h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
+
+  function stockage(action, valeur) {
+    try {
+      if (action === "get") return localStorage.getItem("theme");
+      if (action === "set") localStorage.setItem("theme", valeur);
+      if (action === "del") localStorage.removeItem("theme");
+    } catch (e) {
+      /* localStorage indisponible : on continue sans mémoriser. */
+    }
+    return null;
+  }
+
+  // Appliquer le choix mémorisé au plus tôt (sinon, le système décide via CSS).
+  var choix = stockage("get");
+  if (choix === "dark" || choix === "light") {
+    racine.setAttribute("data-theme", choix);
+  }
+
+  function themeActif() {
+    var attr = racine.getAttribute("data-theme");
+    if (attr === "dark" || attr === "light") return attr;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  }
+
+  function creerBoutonTheme() {
+    var header = document.querySelector("header");
+    if (!header) return;
+
+    var bouton = document.createElement("button");
+    bouton.type = "button";
+    bouton.className = "theme-toggle";
+
+    function rafraichir() {
+      var sombre = themeActif() === "dark";
+      bouton.innerHTML = sombre ? ICONE_SOLEIL : ICONE_LUNE;
+      var label = sombre ? "Passer en mode clair" : "Passer en mode sombre";
+      bouton.setAttribute("aria-label", label);
+      bouton.setAttribute("title", label);
+    }
+
+    bouton.addEventListener("click", function () {
+      var nouveau = themeActif() === "dark" ? "light" : "dark";
+      racine.setAttribute("data-theme", nouveau);
+      stockage("set", nouveau);
+      rafraichir();
+    });
+
+    rafraichir();
+    header.appendChild(bouton);
+  }
+
+  creerBoutonTheme();
 
   // Vrai sur les appareils sans survol (tactiles) : c'est là qu'on veut le clic.
   var tactile = window.matchMedia("(hover: none)");

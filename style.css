@@ -46,6 +46,7 @@ a:hover {
 }
 
 header {
+  position: relative;
   background: var(--secondary);
   color: var(--on-secondary);
   padding: 1.5rem 1rem;
@@ -558,4 +559,67 @@ nav {
     transition: opacity 0.2s ease, visibility 0.2s;
     transform: none;
   }
+}
+
+/* ===== Mode sombre ===== */
+/* Variables sombres : suit le système, sauf si l'utilisateur force le clair. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --dominant: #10151d;
+    --surface: #1a212c;
+    --line: #2b3542;
+    --text: #e7eaee;
+    --muted: #9aa6b4;
+  }
+  :root:not([data-theme="light"]) main a,
+  :root:not([data-theme="light"]) section a {
+    color: var(--accent-on-dark);
+  }
+}
+
+/* Choix explicite « sombre » (bouton), prioritaire sur le système. */
+:root[data-theme="dark"] {
+  --dominant: #10151d;
+  --surface: #1a212c;
+  --line: #2b3542;
+  --text: #e7eaee;
+  --muted: #9aa6b4;
+}
+:root[data-theme="dark"] main a,
+:root[data-theme="dark"] section a {
+  color: var(--accent-on-dark);
+}
+
+/* Bouton bascule de thème (injecté par script.js, ancré dans le header) */
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--on-secondary);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.theme-toggle:active {
+  transform: scale(0.94);
+}
+
+.theme-toggle svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: currentColor;
 }
