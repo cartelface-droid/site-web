@@ -47,4 +47,30 @@
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") fermerTous(null);
   });
+
+  // Bouton « retour en haut » créé dynamiquement (présent sur toutes les pages).
+  var haut = document.createElement("button");
+  haut.type = "button";
+  haut.className = "retour-haut";
+  haut.setAttribute("aria-label", "Retour en haut de la page");
+  haut.setAttribute("title", "Retour en haut");
+  haut.innerHTML =
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8l-6 6 1.4 1.4L12 10.8l4.6 4.6L18 14z"/></svg>';
+  document.body.appendChild(haut);
+
+  function majVisibilite() {
+    if (window.scrollY > 300) {
+      haut.classList.add("visible");
+    } else {
+      haut.classList.remove("visible");
+    }
+  }
+
+  haut.addEventListener("click", function () {
+    var reduit = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduit ? "auto" : "smooth" });
+  });
+
+  window.addEventListener("scroll", majVisibilite, { passive: true });
+  majVisibilite();
 })();
