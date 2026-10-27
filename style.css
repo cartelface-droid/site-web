@@ -94,9 +94,41 @@ section h2 {
 
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   background: var(--secondary);
   color: var(--on-secondary);
+}
+
+.reseaux {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.reseaux a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  color: var(--on-secondary);
+  background: rgba(255, 255, 255, 0.08);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.reseaux a:hover,
+.reseaux a:focus-visible {
+  background: var(--accent-on-dark);
+  color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.reseaux svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
 }
 
 form {
