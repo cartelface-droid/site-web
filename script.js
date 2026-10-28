@@ -64,6 +64,61 @@
 
   creerBoutonTheme();
 
+  // ===== Menu hamburger (regroupe toute la navigation) =====
+  function creerHamburger() {
+    var header = document.querySelector("header");
+    var nav = header && header.querySelector("nav");
+    if (!header || !nav) return;
+
+    nav.classList.add("repliable");
+    if (!nav.id) nav.id = "menu-principal";
+
+    var bouton = document.createElement("button");
+    bouton.type = "button";
+    bouton.className = "menu-hamburger";
+    bouton.setAttribute("aria-controls", nav.id);
+    bouton.setAttribute("aria-expanded", "false");
+    bouton.innerHTML =
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>' +
+      "<span>Menu</span>";
+
+    function definir(ouvert) {
+      nav.classList.toggle("ouvert", ouvert);
+      bouton.setAttribute("aria-expanded", ouvert ? "true" : "false");
+    }
+
+    bouton.addEventListener("click", function (e) {
+      e.stopPropagation();
+      definir(!nav.classList.contains("ouvert"));
+    });
+
+    // Refermer en cliquant en dehors de la navigation.
+    document.addEventListener("click", function (e) {
+      if (!nav.classList.contains("ouvert")) return;
+      if (e.target.closest("nav") || e.target.closest(".menu-hamburger")) return;
+      definir(false);
+    });
+
+    // Refermer avec la touche Échap.
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") definir(false);
+    });
+
+    // Fermer quand on suit un lien (sauf le déclencheur du sous-menu Galerie).
+    nav.addEventListener("click", function (e) {
+      var lien = e.target.closest("a");
+      if (!lien) return;
+      if (lien.parentElement && lien.parentElement.classList.contains("deroulant")) {
+        return;
+      }
+      definir(false);
+    });
+
+    nav.parentNode.insertBefore(bouton, nav);
+  }
+
+  creerHamburger();
+
   // Vrai sur les appareils sans survol (tactiles) : c'est là qu'on veut le clic.
   var tactile = window.matchMedia("(hover: none)");
 
